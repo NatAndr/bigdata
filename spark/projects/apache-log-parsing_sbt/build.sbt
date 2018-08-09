@@ -1,4 +1,4 @@
-name := "Log Parsing"
+name := "Apache Log Parsing"
 
 version := "0.0.1"
 
