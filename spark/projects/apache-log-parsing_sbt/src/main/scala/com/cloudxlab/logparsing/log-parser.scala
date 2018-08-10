@@ -7,6 +7,7 @@ class LogParser extends Serializable {
   val PATTERN_IP = "^([0-9\\.]+) .*$"
   val PATTERN_URL = "^.*GET ([^\" ]+).*$"
   val PATTERN_DATE = "^.*\\[([^ ]{20}).*$"
+  val PATTERN_HTTP_CODE = "^.*( [1-9][0-9][0-9] ).*$"
 
   def containsPattern(line: String, pattern: String): Boolean = line matches pattern
 
@@ -32,6 +33,7 @@ class LogParser extends Serializable {
 
   def printTop(topUrls: Array[(String, Int)], name: String, num: Int): Unit = {
     printf("===== TOP %d %s =====", num, name)
+    println()
     for (i <- topUrls) {
       println(i)
     }
