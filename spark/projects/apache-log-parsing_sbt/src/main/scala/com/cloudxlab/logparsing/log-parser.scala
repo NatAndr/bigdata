@@ -5,7 +5,7 @@ import org.apache.spark.rdd.RDD
 
 class LogParser extends Serializable {
   val PATTERN_IP = "^([0-9\\.]+) .*$"
-  val PATTERN_URL = "^.*GET ([^\" ]+).*$"
+  val PATTERN_URL = "^.*( /[^\" ]+).*$"
   val PATTERN_DATE = "^.*\\[([^ ]{20}).*$"
   val PATTERN_HTTP_CODE = "^.*( [1-9][0-9][0-9] ).*$"
 
