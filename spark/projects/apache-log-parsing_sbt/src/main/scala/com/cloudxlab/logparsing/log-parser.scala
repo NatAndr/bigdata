@@ -92,7 +92,12 @@ object TopHours {
 
     val logs = sc.textFile(args(2))
     val num = args(1).toInt
-    val fx = (x: String) => x.substring(12, 14)
+    val fx = (x: String) => {
+      if (x.length < 20) {
+        println(x)
+      }
+      x.substring(12, 14)
+    }
 
     val top5HoursWithHighTraffic = logParser.getTopNByPattern(logs, sc, num, logParser.PATTERN_URL, sortAscending = false, fx)
     logParser.printTop(top5HoursWithHighTraffic, "hours with high traffic", num)
