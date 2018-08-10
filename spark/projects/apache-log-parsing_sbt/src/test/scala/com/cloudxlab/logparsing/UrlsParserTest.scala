@@ -8,7 +8,7 @@ class UrlsParserTest extends FlatSpec {
     val logParser = new LogParser
     val line = "pipe1.nyc.pipeline.com - - [01/Aug/1995:00:12:37 -0400] \"GET /history/apollo/apollo-13/apollo-13-patch-small.gif\" 200 12859"
     val url = logParser.extractByPattern(line, logParser.PATTERN_URL)
-    assert(url == "/history/apollo/apollo-13/apollo-13-patch-small.gif")
+    assert(url == " /history/apollo/apollo-13/apollo-13-patch-small.gif")
   }
 
   "containsUrl" should "Check if URL exists in the log line" in {

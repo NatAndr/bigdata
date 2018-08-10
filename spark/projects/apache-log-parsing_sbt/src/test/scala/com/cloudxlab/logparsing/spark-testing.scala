@@ -33,7 +33,7 @@ class SampleTest extends FunSuite with SharedSparkContext {
 
     val records = logParser.getTopNByPattern(rdd, sc, 10, logParser.PATTERN_URL, sortAscending = false, null)
     assert(records.length === 1)
-    assert(records(0)._1 == "/history/apollo/apollo-13/apollo-13-patch-small.gif")
+    assert(records(0)._1 == " /history/apollo/apollo-13/apollo-13-patch-small.gif")
   }
 
   test("Computing top5 highest traffic hours") {

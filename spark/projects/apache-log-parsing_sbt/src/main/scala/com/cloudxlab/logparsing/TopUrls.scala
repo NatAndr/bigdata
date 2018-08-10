@@ -26,7 +26,9 @@ object TopUrls {
 
     val logs = sc.textFile(args(2))
     val num = args(1).toInt
-    val topUrls = logParser.getTopNByPattern(logs, sc, num, logParser.PATTERN_URL, sortAscending = false, null)
+    val fx = (x: String) => x.trim
+
+    val topUrls = logParser.getTopNByPattern(logs, sc, num, logParser.PATTERN_URL, sortAscending = false, fx)
 
     logParser.printTop(topUrls, "URLs", num)
   }
