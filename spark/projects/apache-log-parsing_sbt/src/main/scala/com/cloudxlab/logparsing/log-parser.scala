@@ -5,8 +5,8 @@ import org.apache.spark.{SparkContext, _}
 
 class LogParser extends Serializable {
   val PATTERN_IP = "^([0-9\\.]+) .*$"
-  val PATTERN_URL = "^.*GET ([^\" ]*).*$"
-  val PATTERN_DATE = "^.*\\[([^ ]*).*$"
+  val PATTERN_URL = "^.*GET ([^\" ]+).*$"
+  val PATTERN_DATE = "^.*\\[([^ ]{20}).*$"
 
   def containsPattern(line: String, pattern: String): Boolean = line matches pattern
 
