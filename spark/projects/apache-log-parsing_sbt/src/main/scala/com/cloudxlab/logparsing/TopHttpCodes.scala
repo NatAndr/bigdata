@@ -2,7 +2,7 @@ package com.cloudxlab.logparsing
 
 import org.apache.spark.{SparkConf, SparkContext}
 
-object HttpCodes {
+object TopHttpCodes {
   val usage =
     """
         Usage: HttpCodes <how_many> <file_or_directory_in_hdfs>
